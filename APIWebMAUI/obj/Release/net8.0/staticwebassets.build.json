@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "XefU4MNyYk3eJ3Q6XKjapsYlWzuQg9z2SWrUPNGo6jA=",
+  "Source": "APIWebMAUI",
+  "BasePath": "_content/APIWebMAUI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

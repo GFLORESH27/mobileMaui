@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobile_exam.Views.HomeView"
+             Title="HomeView"
+             NavigationPage.HasNavigationBar="False"
+             Background="White">
+    <Grid RowDefinitions=".2*,.25*,.1*,.45*">
+        <VerticalStackLayout Spacing="10">
+            <Label
+                Margin="25,25,0,0"
+                FontAttributes="Bold"
+                FontFamily="bold"
+                Text="Veterinaria DC"
+                FontSize="20"
+                TextColor="Black"/>
+            <Grid Margin="25,10,0,0" ColumnDefinitions=".9*,.1*">
+                <Border 
+                    Stroke="#53B175"
+                    StrokeThickness="1"
+                    Padding="0" 
+                    StrokeShape="RoundRectangle 8,8,8,8">
+                    <Grid>
+                        <SearchBar Text="{Binding petName}" 
+                                   Placeholder="Buscar Mascota"
+                                   TextColor="Black"
+                                   x:Name="searchNombrePet"
+                                   TextChanged="searchName_TextChanged"
+                                   SearchButtonPressed="searchName_SearchButtonPressed" />
+                    </Grid>
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
+        <Grid Grid.Row="1" Margin="10,10,10,-5">
+            <RoundRectangle Background="#c3f7d2" CornerRadius="8,8,8,8"/>
+            <VerticalStackLayout Spacing="10">
+                <Label
+                    Margin="25,25,0,0"
+                    FontAttributes="Bold"
+                    FontFamily="bold"
+                    HorizontalTextAlignment="Center"
+                    Text="Nuestros servicios"
+                    FontSize="18"
+                    TextColor="Black"/>
+                <Grid Margin="10,10,10,10" ColumnSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        FontFamily="bold"
+                        Text="Guarderia"
+                        TextColor="Black"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start" />
+                    <Border 
+                        Grid.Row="1"
+                        Style="{StaticResource estiloBorder}"
+                        >
+                        <Image Aspect="Fill" Source="guarderia.png"/>
+                    </Border>
+                    <Label 
+                        FontFamily="bold"
+                        Grid.Column="1"
+                        Text="Peluqueria"
+                        TextColor="Black"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start" />
+                    <Border
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Stroke="#53B175"
+                        StrokeThickness="2"
+                        Background="White"
+                        StrokeShape="RoundRectangle 8,8,8,8">
+                        <Image Aspect="AspectFit" Source="peluqueria.png"/>
+                    </Border>
+                    <Label 
+                        FontFamily="bold"
+                        Grid.Column="2"
+                        Text="Consulta"
+                        TextColor="Black"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start" />
+                    <Border
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Stroke="#53B175"
+                        StrokeThickness="2"
+                        Background="White"
+                        StrokeShape="RoundRectangle 8,8,8,8">
+                        <Image Aspect="Fill" Source="consulta.png"/>
+                    </Border>
+                </Grid>
+            </VerticalStackLayout>
+        </Grid>
+        <Grid Grid.Row="2" Margin="10,10,0,0">
+            <HorizontalStackLayout HorizontalOptions="Start" Spacing="8">
+                <ImageButton
+                    Background="White"
+                    BorderColor="#53B175"
+                    BorderWidth="2"
+                    Padding="10"
+                    Aspect="Fill"
+                    Source="pets.png"
+                    HeightRequest="40"
+                    WidthRequest="40"
+                    CornerRadius="100"
+                    Clicked="OnButtonClicked"/>
+                <Label FontFamily="bold"
+                       VerticalTextAlignment="Center"
+                       FontSize="15"
+                       Text="Registra tu mascota"
+                       TextColor="#030303"/>
+            </HorizontalStackLayout>
+        </Grid>
+        <Grid Grid.Row="3" Margin="10,0,10,10">
+            <RoundRectangle Background="#F2F3F2"/>
+            <ScrollView>
+                <VerticalStackLayout>
+                    <ListView x:Name="listRegiste" SelectedItem="{Binding objSeleccionado}" ItemTapped="lst_ItemTapped"  ItemsSource="{Binding listRegister}" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <SwipeView>
+                                        <SwipeView.LeftItems>
+                                            <SwipeItems>
+                                                <SwipeItem x:Name="swipeItemEliminar"
+                                                           Invoked="swipeItemEliminar_Invoked"
+                                                           BackgroundColor="{StaticResource rojoOscuro}" Text="Eliminar"/>
+                                            </SwipeItems>
+                                        </SwipeView.LeftItems>
+                                        <HorizontalStackLayout Spacing="8" Margin="10,10,2,2">                                            
+                                            <Label TextColor="Black" Style="{StaticResource estiloLabel}" Text="{Binding petName}" />
+                                            <Label TextColor="Black" Style="{StaticResource estiloLabel}" Text="{Binding nameService}" />
+                                            <Label TextColor="Black" Style="{StaticResource estiloLabel}" Text="{Binding dateService}" />
+                                        </HorizontalStackLayout>
+                                    </SwipeView>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,11 @@
+C:\Users\GabrielF\source\repos\mobile-exam\MobileExam.Entities\bin\Debug\net8.0\MobileExam.Entities.deps.json
+C:\Users\GabrielF\source\repos\mobile-exam\MobileExam.Entities\bin\Debug\net8.0\MobileExam.Entities.dll
+C:\Users\GabrielF\source\repos\mobile-exam\MobileExam.Entities\bin\Debug\net8.0\MobileExam.Entities.pdb
+C:\Users\GabrielF\source\repos\mobile-exam\MobileExam.Entities\obj\Debug\net8.0\MobileExam.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GabrielF\source\repos\mobile-exam\MobileExam.Entities\obj\Debug\net8.0\MobileExam.Entities.AssemblyInfoInputs.cache
+C:\Users\GabrielF\source\repos\mobile-exam\MobileExam.Entities\obj\Debug\net8.0\MobileExam.Entities.AssemblyInfo.cs
+C:\Users\GabrielF\source\repos\mobile-exam\MobileExam.Entities\obj\Debug\net8.0\MobileExam.Entities.csproj.CoreCompileInputs.cache
+C:\Users\GabrielF\source\repos\mobile-exam\MobileExam.Entities\obj\Debug\net8.0\MobileExam.Entities.dll
+C:\Users\GabrielF\source\repos\mobile-exam\MobileExam.Entities\obj\Debug\net8.0\refint\MobileExam.Entities.dll
+C:\Users\GabrielF\source\repos\mobile-exam\MobileExam.Entities\obj\Debug\net8.0\MobileExam.Entities.pdb
+C:\Users\GabrielF\source\repos\mobile-exam\MobileExam.Entities\obj\Debug\net8.0\ref\MobileExam.Entities.dll

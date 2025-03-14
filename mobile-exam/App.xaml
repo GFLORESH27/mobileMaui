@@ -1,0 +1,62 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:mobile_exam"
+             x:Class="mobile_exam.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="rojoOscuro" >#dc3545</Color>
+            <Color x:Key="verdeOscuro" >#198754</Color>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="verticalStackLayoutPage" TargetType="VerticalStackLayout" >
+                <Setter Property="Margin" Value="20" />
+            </Style>
+            <Style x:Key="estiloStackLayoutButton" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="Spacing" Value="5" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="Margin" Value="0,20" />
+            </Style>
+            <Style x:Key="estiloBoton" TargetType="Button">
+                <Setter Property="CornerRadius" Value="0" />
+            </Style>
+            <Style x:Key="botonVerde" TargetType="Button" BasedOn="{StaticResource estiloBoton}">
+                <Setter Property="BackgroundColor" Value="{StaticResource verdeOscuro}" />
+            </Style>
+
+            <Style x:Key="botonRojo" TargetType="Button" BasedOn="{StaticResource estiloBoton}">
+                <Setter Property="BackgroundColor" Value="{StaticResource rojoOscuro}" />
+            </Style>
+            <Style x:Key="estiloLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource Gray900}" />
+            </Style>
+            <Style x:Key="estiloLabelGeneric" TargetType="Entry">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource verdeOscuro}" />
+            </Style>
+            <Style x:Key="estiloPickerGeneric" TargetType="Picker">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource verdeOscuro}" />
+            </Style>
+            <Style x:Key="estiloDateGeneric" TargetType="DatePicker">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource verdeOscuro}" />
+            </Style>
+            <Style x:Key="estiloBorder" TargetType="Border">
+                <Setter Property="Stroke" Value="#53B175" />
+                <Setter Property="StrokeThickness" Value="2" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 8,8,8,8" />
+                <Setter Property="Background" Value="White" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

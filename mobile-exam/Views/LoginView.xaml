@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobile_exam.Views.LoginView"
+             NavigationPage.HasNavigationBar="False"
+             Title="LoginView">
+    <Grid RowDefinitions=".3*, .7*">
+        <Image Aspect="AspectFill" Source="imagefondo.png"/>
+        <Image Aspect="AspectFit"  Source="dog2.png" TranslationY="-25"/>
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-5,-30,-5,-2" CornerRadius="30,30,0,0" Fill="White"/>
+            <VerticalStackLayout Margin="35,10,30,0">
+                <Label FontAttributes="Bold"
+                       FontFamily="bold"
+                       FontSize="26"
+                       Text="Iniciar sesión"
+                       TextColor="#181725"/>
+                <Label FontFamily="regular"
+                       FontSize="15"
+                       Text="Ingresa tú correo y contraseña"
+                       TextColor="#7C7C7C"/>
+                <Grid Margin="15,50,15,8">
+                    <Border Stroke="#53B175"
+                            StrokeThickness="2"
+                            StrokeShape="RoundRectangle 15,15,15,15"
+                            Background="White"
+                            VerticalOptions="Center">
+                        <Entry Placeholder="Correo Electronico"
+                               TranslationX="+6"
+                               TranslationY="+8"
+                               Keyboard="Email"
+                               FontSize="15"
+                               TextColor="Black"
+                               VerticalOptions="Start"/>
+                    </Border>
+                </Grid>
+                <Grid Margin="15,8,15,10">
+                    <Border Stroke="#53B175"
+                            StrokeThickness="2"
+                            StrokeShape="RoundRectangle 15,15,15,15"
+                            Background="White"
+                            VerticalOptions="Center">
+                        <Entry IsPassword="True"
+                               Placeholder="Contraseña"
+                               TranslationX="+6"
+                               TranslationY="+8"
+                               FontSize="15"
+                               TextColor="Black"
+                               VerticalOptions="Start"/>
+                    </Border>
+                </Grid>
+                <Button CornerRadius="15"
+                        Margin="15,60,15,10" 
+                        BackgroundColor="#53B175"
+                        HeightRequest="50"
+                        Text="Continuar"
+                        FontFamily="bold"
+                        FontSize="15"
+                        TextColor="White"
+                        Clicked="OnButtonClicked"/>
+                <HorizontalStackLayout Margin="20,10,20,10" HorizontalOptions="Center">
+                    <Label FontFamily="regular"
+                           FontSize="15"
+                           Text="No tienes una cuenta?"
+                           TextColor="#030303"/>
+                    <Label Margin="5,0,0,0"
+                           FontAttributes="Bold"
+                           FontFamily="bold"
+                           FontSize="15"
+                           Text="Registrarse"
+                           TextColor="#53B175"
+                           TextDecorations="Underline"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>       
+        </Grid>
+    </Grid>
+</ContentPage>

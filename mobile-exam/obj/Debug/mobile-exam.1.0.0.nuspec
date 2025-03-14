@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>mobile-exam</id>
+    <version>1.0.0</version>
+    <authors>mobile-exam</authors>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net9.0-android35.0">
+        <dependency id="MobileExam.Entities" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Debug" version="9.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls" version="9.0.14" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net9.0-ios18.2">
+        <dependency id="MobileExam.Entities" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Debug" version="9.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls" version="9.0.14" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net9.0-maccatalyst18.2">
+        <dependency id="MobileExam.Entities" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Debug" version="9.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls" version="9.0.14" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net9.0-windows10.0.19041">
+        <dependency id="MobileExam.Entities" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Debug" version="9.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls" version="9.0.14" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\GabrielF\source\repos\mobile-exam\mobile-exam\bin\Debug\net9.0-android\mobile-exam.runtimeconfig.json" target="lib\net9.0-android35.0\mobile-exam.runtimeconfig.json" />
+    <file src="C:\Users\GabrielF\source\repos\mobile-exam\mobile-exam\bin\Debug\net9.0-android\mobile-exam.dll" target="lib\net9.0-android35.0\mobile-exam.dll" />
+    <file src="C:\Users\GabrielF\source\repos\mobile-exam\mobile-exam\bin\Debug\net9.0-android\mobile-exam.xml" target="lib\net9.0-android35.0\mobile-exam.xml" />
+    <file src="C:\Users\GabrielF\source\repos\mobile-exam\mobile-exam\bin\Debug\net9.0-ios\ios-arm64\mobile-exam.runtimeconfig.json" target="lib\net9.0-ios18.2\mobile-exam.runtimeconfig.json" />
+    <file src="C:\Users\GabrielF\source\repos\mobile-exam\mobile-exam\bin\Debug\net9.0-ios\ios-arm64\mobile-exam.dll" target="lib\net9.0-ios18.2\mobile-exam.dll" />
+    <file src="C:\Users\GabrielF\source\repos\mobile-exam\mobile-exam\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\mobile-exam.runtimeconfig.json" target="lib\net9.0-maccatalyst18.2\mobile-exam.runtimeconfig.json" />
+    <file src="C:\Users\GabrielF\source\repos\mobile-exam\mobile-exam\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\mobile-exam.dll" target="lib\net9.0-maccatalyst18.2\mobile-exam.dll" />
+    <file src="C:\Users\GabrielF\source\repos\mobile-exam\mobile-exam\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\mobile-exam.runtimeconfig.json" target="lib\net9.0-windows10.0.19041\mobile-exam.runtimeconfig.json" />
+    <file src="C:\Users\GabrielF\source\repos\mobile-exam\mobile-exam\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\mobile-exam.dll" target="lib\net9.0-windows10.0.19041\mobile-exam.dll" />
+    <file src="C:\Users\GabrielF\source\repos\mobile-exam\mobile-exam\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\resources.pri" target="lib\net9.0-windows10.0.19041\resources.pri" />
+  </files>
+</package>

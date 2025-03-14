@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobile_exam.Views.RegistrationForm"
+             Background="#F2F3F2"
+             Title="Formulario Registro Mascota">
+    <VerticalStackLayout Style="{StaticResource verticalStackLayoutPage}">
+        <Label Text="Nombre Mascota" Style="{StaticResource estiloLabel}"/>
+        <Entry Text="{Binding oRegisterModel.oFormRegister.petName}" 
+               Style="{StaticResource estiloLabelGeneric}"/>
+        <Label Text="Seleccione el Tipo Servicio" 
+               Style="{StaticResource estiloLabel}"/>
+        <Picker SelectedItem="{Binding oRegisterModel.selectedOptionService}" 
+                ItemsSource="{Binding oRegisterModel.listService}" 
+                ItemDisplayBinding="{Binding nombreServicio}" 
+                Style="{StaticResource estiloPickerGeneric}"/>
+        <Label Text="Seleccione la Fecha" 
+               Style="{StaticResource estiloLabel}"/>
+        <DatePicker Format="dd/MM/yyyy" 
+                    Date="{Binding oRegisterModel.oFormRegister.dateService}" 
+                    Style="{StaticResource estiloDateGeneric}"/>
+        <StackLayout Style="{StaticResource estiloStackLayoutButton}">
+        <Button x:Name="btnGuardar" 
+                Text="Guardar"
+                Style="{StaticResource botonVerde}"
+                Clicked="BtnGuardar_Clicked"/>
+        <Button x:Name="btnCancelar" 
+                Text="Cancelar" 
+                Style="{StaticResource botonRojo}"
+                Clicked="BtnCancelar_Clicked" />
+    </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
