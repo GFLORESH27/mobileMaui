@@ -1,20 +1,19 @@
+using CommunityToolkit.Mvvm.ComponentModel;
+using Firebase.Auth;
+using Firebase.Auth.Repository;
+using mobile_exam.Models;
 using mobile_exam.Services;
 
 namespace mobile_exam.Views;
 
 public partial class LoginView : ContentPage
 {
-	public LoginView()
+    private readonly SignInModelView _signInModelView;
+    public LoginView(SignInModelView signInModelView)
 	{
 		
 		InitializeComponent();
-	}
-    private void OnButtonClicked(object sender, EventArgs args)
-    {
-       
-        RegisterService registerService = MauiProgram.ServiceProvider.GetService<RegisterService>();
-        VeterinaryService veterinaryService = MauiProgram.ServiceProvider.GetService<VeterinaryService>();
-        Navigation.PushAsync(new HomeView(registerService, veterinaryService));
+        BindingContext = _signInModelView = signInModelView;
 
     }
 }

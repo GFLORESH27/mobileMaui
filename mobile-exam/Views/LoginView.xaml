@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:mobile_exam.Views"
              x:Class="mobile_exam.Views.LoginView"
+             x:DataType="vm:SignInModelView"
              NavigationPage.HasNavigationBar="False"
-             Title="LoginView">
+             Title="LoginView"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
     <Grid RowDefinitions=".3*, .7*">
         <Image Aspect="AspectFill" Source="imagefondo.png"/>
         <Image Aspect="AspectFit"  Source="dog2.png" TranslationY="-25"/>
@@ -31,7 +35,8 @@
                                Keyboard="Email"
                                FontSize="15"
                                TextColor="Black"
-                               VerticalOptions="Start"/>
+                               VerticalOptions="Start"
+                               Text="{Binding SignInModel.Email}"/>
                     </Border>
                 </Grid>
                 <Grid Margin="15,8,15,10">
@@ -46,7 +51,8 @@
                                TranslationY="+8"
                                FontSize="15"
                                TextColor="Black"
-                               VerticalOptions="Start"/>
+                               VerticalOptions="Start"
+                               Text="{Binding SignInModel.Password}"/>
                     </Border>
                 </Grid>
                 <Button CornerRadius="15"
@@ -57,7 +63,7 @@
                         FontFamily="bold"
                         FontSize="15"
                         TextColor="White"
-                        Clicked="OnButtonClicked"/>
+                        Command="{Binding SignInCommand}"/>
                 <HorizontalStackLayout Margin="20,10,20,10" HorizontalOptions="Center">
                     <Label FontFamily="regular"
                            FontSize="15"

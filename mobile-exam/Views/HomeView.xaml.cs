@@ -89,14 +89,6 @@ public partial class HomeView : ContentPage
 
     private void searchName_TextChanged(object sender, TextChangedEventArgs e)
     {
-        //if (petName == null || petName == "")
-        //{
-        //    listRegister.Clear();
-        //    foreach (var pet in listafiltro)
-        //    {
-        //        listRegister.Add(pet);
-        //    }
-        //}
         ObservableCollection<ListRegister> listaop;
         listRegister.Clear();
         if (petName == null || petName == "")

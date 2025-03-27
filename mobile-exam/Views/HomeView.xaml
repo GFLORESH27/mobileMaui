@@ -3,22 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mobile_exam.Views.HomeView"
              Title="HomeView"
+             Shell.FlyoutBehavior="Disabled"
              NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
              Background="White">
     <Grid RowDefinitions=".2*,.25*,.1*,.45*">
         <VerticalStackLayout Spacing="10">
-            <Label
-                Margin="25,25,0,0"
-                FontAttributes="Bold"
-                FontFamily="bold"
-                Text="Veterinaria DC"
-                FontSize="20"
-                TextColor="Black"/>
-            <Grid Margin="25,10,0,0" ColumnDefinitions=".9*,.1*">
+            <Grid ColumnDefinitions=".8*, .2*" Margin="20,0,20,0">
+                <Label
+                    Style="{StaticResource HomeLabelTitle}"
+                    Text="Veterinaria DC"/>
+                <ImageButton
+                    Grid.Column="1"
+                    Source="logout.svg" Style="{StaticResource IconButton}"/>
+            </Grid>
+            <Grid Margin="12,10,12,0">
                 <Border 
                     Style="{StaticResource estiloBorder}">
                     <Grid>
-                        <SearchBar Text="{Binding petName}" 
+                        <SearchBar Text="{Binding petName}"                                   
+                                   BackgroundColor="#dad6d1"
                                    Placeholder="Buscar Mascota"
                                    x:Name="searchNombrePet"
                                    TextChanged="searchName_TextChanged"
@@ -90,32 +94,53 @@
         </Grid>
         <Grid Grid.Row="3" Margin="10,0,10,10">
             <RoundRectangle Background="#F2F3F2"/>
-            <ScrollView>
-                <VerticalStackLayout>
-                    <ListView x:Name="listRegiste" SelectedItem="{Binding objSeleccionado}" ItemTapped="lst_ItemTapped"  ItemsSource="{Binding listRegister}" >
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <SwipeView>
-                                        <SwipeView.LeftItems>
-                                            <SwipeItems>
-                                                <SwipeItem x:Name="swipeItemEliminar"
-                                                           Invoked="swipeItemEliminar_Invoked"
-                                                           BackgroundColor="{StaticResource rojoOscuro}" Text="Eliminar"/>
-                                            </SwipeItems>
-                                        </SwipeView.LeftItems>
-                                        <HorizontalStackLayout Spacing="8" Margin="10,10,2,2">                                            
-                                            <Label TextColor="Black" Style="{StaticResource estiloLabel}" Text="{Binding petName}" />
-                                            <Label TextColor="Black" Style="{StaticResource estiloLabel}" Text="{Binding nameService}" />
-                                            <Label TextColor="Black" Style="{StaticResource estiloLabel}" Text="{Binding dateService}" />
-                                        </HorizontalStackLayout>
-                                    </SwipeView>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </VerticalStackLayout>
-            </ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".14*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Background="LightGrey">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{StaticResource ListViewLabe}" Text="Fecha" Margin="10"/>
+                    <Label Grid.Column="1" Style="{StaticResource ListViewLabe}" Text="Nombre" Margin="10"/>
+                    <Label Grid.Column="2" Style="{StaticResource ListViewLabe}" Text="Servicio" Margin="10"/>
+                </Grid>
+                <ScrollView Grid.Row="1">
+                    <VerticalStackLayout>
+                        <ListView x:Name="listRegiste" SelectedItem="{Binding objSeleccionado}" ItemTapped="lst_ItemTapped"  ItemsSource="{Binding listRegister}" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <SwipeView>
+                                            <SwipeView.LeftItems>
+                                                <SwipeItems>
+                                                    <SwipeItem x:Name="swipeItemEliminar"
+                                                               Invoked="swipeItemEliminar_Invoked"
+                                                               BackgroundColor="{StaticResource rojoOscuro}" Text="Eliminar"/>
+                                                </SwipeItems>
+                                            </SwipeView.LeftItems>
+                                            <Grid ColumnSpacing="10" Margin="10" VerticalOptions="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Row="1" TextColor="Black" Style="{StaticResource estiloLabel}" Text="{Binding dateService, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                                                <Label Grid.Row="1" Grid.Column="1" TextColor="Black" Style="{StaticResource estiloLabel}" Text="{Binding petName}" />
+                                                <Label Grid.Row="1" Grid.Column="2" TextColor="Black" Style="{StaticResource estiloLabel}" Text="{Binding nameService}" />
+                                            </Grid>
+                                        </SwipeView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Grid>
         </Grid>
     </Grid>
 </ContentPage>

@@ -61,9 +61,8 @@ public partial class RegistrationForm : ContentPage
             else
             {
                 await DisplayAlert("Exito", "Se guardo el registro", "Salir");
-                RegisterService registerService = MauiProgram.ServiceProvider.GetService<RegisterService>();
-                VeterinaryService veterinaryService = MauiProgram.ServiceProvider.GetService<VeterinaryService>();
-                await Navigation.PushAsync(new HomeView(registerService, veterinaryService));                
+                await Navigation.PopAsync();
+                registerService.notificarChange();
             }
         }
     }
